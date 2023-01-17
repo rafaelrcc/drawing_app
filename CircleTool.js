@@ -1,5 +1,5 @@
 
-function CircleTool(){
+function CircleTool(fillCheckbox,strokeSlider){
 
 	var startMouseX = -1;
 	var startMouseY = -1;
@@ -7,6 +7,20 @@ function CircleTool(){
 
 	//draws the line to the screen 
 	this.draw = function(){
+
+		if (fillCheckbox.checked) {
+			noStroke();
+		}
+		else {
+			noFill();
+		}
+
+
+		// set the stroke weight
+
+		strokeWeight(strokeSlider.value);
+
+		
 
 		//only draw when mouse is clicked
 		if(mouseIsPressed){

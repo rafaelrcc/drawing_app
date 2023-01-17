@@ -1,4 +1,4 @@
-function TriangleTool(){
+function TriangleTool(fillCheckbox,strokeSlider){
 
   
     var startMouseX = -1;
@@ -7,6 +7,20 @@ function TriangleTool(){
   
     //draws the line to the screen 
     this.draw = function(){
+
+      if (fillCheckbox.checked) {
+        noStroke();
+        
+      }
+      else {
+        noFill();
+      }
+
+
+      // set the stroke weight
+
+      strokeWeight(strokeSlider.value);
+
   
       //only draw when mouse is pressed
       if(mouseIsPressed){
@@ -24,7 +38,6 @@ function TriangleTool(){
           //line between mouse pressed and released
           updatePixels();
           //draw the hollow equilateral triangle
-          noFill();
           var side = dist(startMouseX, startMouseY, mouseX, mouseY);
           var h = (Math.sqrt(3)/2) * side;
           var x1 = startMouseX - (side / 2);

@@ -1,7 +1,7 @@
 //a tool for drawing straight lines to the screen. Allows the user to preview
 //the a line to the current mouse position before drawing the line to the 
 //pixel array.
-function LineToTool(){
+function LineToTool(strokeSlider){
 
 	var startMouseX = -1;
 	var startMouseY = -1;
@@ -9,6 +9,9 @@ function LineToTool(){
 
 	//draws the line to the screen 
 	this.draw = function(){
+
+
+
 
 		//only draw when mouse is clicked
 		if(mouseIsPressed){
@@ -26,6 +29,7 @@ function LineToTool(){
 				//line between mouse pressed and released
 				updatePixels();
 				//draw the line
+				strokeWeight(strokeSlider.value);
 				line(startMouseX, startMouseY, mouseX, mouseY);
 			}
 
@@ -34,6 +38,7 @@ function LineToTool(){
 		else if(drawing){
 			//save the pixels with the most recent line and reset the
 			//drawing bool and start locations
+
 			loadPixels();
 			drawing = false;
 			startMouseX = -1;

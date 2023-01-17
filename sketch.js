@@ -30,6 +30,7 @@ function setup() {
 function draw() {
 
 
+
     if (!gridDrawn) {
         // Draw the gridlines
         var gridSize = 20; //size of the grid squares
@@ -61,8 +62,6 @@ function draw() {
     colourP.update();
 
 
-    // no fill 
-    noFill();
     
 
     handleDropdown();

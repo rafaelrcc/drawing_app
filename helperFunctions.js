@@ -1,4 +1,4 @@
-function HelperFunctions() {
+function HelperFunctions(gridDrawn) {
 
 	//Jquery click events. Notice that there is no this. at the
 	//start we don't need to do that here because the event will
