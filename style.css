@@ -1,0 +1,302 @@
+html, body {
+  margin: 0px;
+  height: 100%;
+}
+
+#sidebar {
+	grid-area: sidebar;
+	overflow-y: scroll;
+}
+
+#content {
+	grid-area: content;
+}
+
+.header {
+	grid-area: header;
+	font-family: Helvetica, sans-serif
+}
+
+.footer{
+  grid-area: footer;
+}
+
+.sideBarItem{
+	max-height: 50px;
+	max-width: 50px;
+	padding:5px;
+}
+
+.sideBarItem img{
+	max-height: 50px;
+	max-Width:50px;
+}
+
+
+
+.options{
+	grid-area: options;
+	padding: 15px;
+}
+
+
+
+.wrapper {
+	display: grid;
+	height: 100%;
+	grid-template-columns: 220px 230px  minmax(500px, 1fr);
+	grid-template-rows: 65px minmax(500px, 1fr) 0px;
+	grid-template-areas:
+		"header header header"
+			"sidebar content content"
+			"colourP colourP options";
+	background-color: #fff;
+	color: rgb(44, 44, 44);
+}
+.box {
+  background-color: rgb(60, 60, 60);
+  color: #fff;
+  font-size: 150%;
+}
+
+.header {
+  background-color: rgb(44, 44, 44);
+  border: #999;
+}
+
+
+#clearButton, #saveImageButton{
+
+background-color: rgb(60, 60, 60); /* Change the background color to match your design */
+color: white; /* Change the text color to match your design */
+padding: 16px; /* Change the padding to match your design */
+font-size: 16px; /* Change the font size to match your design */
+border: none;
+cursor: pointer;
+}
+
+#clearButton:hover, #saveImageButton:hover{
+
+	background-color: rgb(14, 14, 14);
+}
+
+#colourPicker {
+  width: 34px;
+  height: 15px;
+  margin-top: 16px;
+  margin-left: -35px;
+  color: transparent;
+  background-color: transparent;
+  border: transparent;
+}
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+/* SHAPES DROPDOWN MENU */ 
+
+/* The container for the dropdown button */
+.dropdown {
+	position: relative;
+	display: inline-block;
+  }
+  
+  /* The button that triggers the dropdown menu */
+  .dropbtn {
+	background-color: rgb(60, 60, 60); /* Change the background color to match your design */
+	color: white; /* Change the text color to match your design */
+	padding: 16px; /* Change the padding to match your design */
+	font-size: 16px; /* Change the font size to match your design */
+	border: none;
+	cursor: pointer;
+  }
+  
+  /* The icon inside the button */
+  .dropbtn i {
+	font-size: 28px; /* Change the icon size to match your design */
+  }
+  
+  /* The container for the dropdown menu */
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9; /* Change the background color to match your design */
+	min-width: 160px; /* Change the width to match your design */
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Add a box shadow to match your design */
+	z-index: 1;
+  }
+
+  
+  
+  /* The links inside the dropdown menu */
+  .dropdown-content a {
+	color: black; /* Change the text color to match your design */
+	padding: 6px 4px; /* Change the padding to match your design */
+	text-decoration: none;
+	display: block;
+	
+  }
+  
+  /* make the icons centered */
+
+
+  .dropdown-content a i {
+	margin-left: 20px;
+	font-size: 27px
+  }
+  /* Change the color of the links when hovered */
+  .dropdown-content a:hover {
+	background-color: #f1f1f1; /* Change the background color to match your design */
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* Two columns */
+  }
+  
+  /* Change the color of the button when hovered */
+  .dropdown:hover .dropbtn {
+	background-color: rgb(14, 14, 14); /* Change the background color to match your design */
+  }
+  
+
+  /* COLORS DROPDOWN MENU */ 
+
+
+  /* The container for the dropdown button */
+.dropdown-colors {
+	position: relative;
+	display: inline-block;
+  }
+  
+  /* The button that triggers the dropdown menu */
+label {
+	background-color: rgb(60, 60, 60); /* Change the background color to match your design */
+	color: white; /* Change the text color to match your design */
+	padding: 17px; /* Change the padding to match your design */
+	font-size: 19px; /* Change the font size to match your design */
+	border: none;
+	cursor: pointer;
+	padding-top: 120%;
+	padding-bottom: 22%;
+  }
+  
+  /* The icon inside the button */
+  label i {
+	font-size: 28px; /* Change the icon size to match your design */
+
+  }
+  
+  /* The container for the dropdown menu */
+
+
+  /* Show the dropdown menu on hover */
+
+  
+  /* Change the color of the button when hovered */
+  label:hover {
+	background-color: rgb(14, 14, 14); /* Change the background color to match your design */
+  }
+
+
+
+    /* PENCIL DROPDOWN MENU */ 
+
+
+
+	/* The container for the dropdown button */
+.dropdown-pencil {
+	position: relative;
+	display: inline-block;
+  }
+  
+  /* The button that triggers the dropdown menu */
+  .dropbtn-pencil {
+	background-color: rgb(60, 60, 60); /* Change the background color to match your design */
+	color: white; /* Change the text color to match your design */
+	padding: 16px; /* Change the padding to match your design */
+	font-size: 16px; /* Change the font size to match your design */
+	border: none;
+	cursor: pointer;
+  }
+  
+  /* The icon inside the button */
+  .dropbtn-pencil i {
+	font-size: 28px; /* Change the icon size to match your design */
+  }
+  
+  /* The container for the dropdown menu */
+  .dropdown-content-pencil {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9; /* Change the background color to match your design */
+	min-width: 160px; /* Change the width to match your design */
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Add a box shadow to match your design */
+	z-index: 1;
+  }
+
+  
+  
+  /* The links inside the dropdown menu */
+  .dropdown-content-pencil a {
+	color: black; /* Change the text color to match your design */
+	padding: 12px 16px; /* Change the padding to match your design */
+	text-decoration: none;
+	display: block;
+	
+  }
+  
+  /* Change the color of the links when hovered */
+  .dropdown-content-pencil a:hover {
+	background-color: #f1f1f1; /* Change the background color to match your design */
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown-pencil:hover .dropdown-content-pencil {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* Two columns */
+  }
+  
+  /* Change the color of the button when hovered */
+  .dropdown-pencil:hover .dropbtn-pencil {
+	background-color: rgb(14, 14, 14); /* Change the background color to match your design */
+  }
+
+
+
+
+  #selected-tool {
+	  display: flex;
+	  flex-wrap: nowrap;
+	  align-items: center;
+	  position: fixed;
+	  right: 130px;
+	  top: 2px;
+	  background-color:rgb(44, 44, 44);
+	  padding: 15px 10px;
+	  font-size: 18px;
+  }
+
+ 
+
+
+.blue-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: blue;
+
+	transition: 0.2s;
+
+
+}
+
+.tool-div, .fill-div, .stroke-div {
+    margin-right: 30px;
+}
