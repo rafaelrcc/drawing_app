@@ -64,7 +64,8 @@ function draw() {
 
     
 
-    handleDropdown();
+    handleDropdownShapes();
+    handleDropdownPencil();
 
 
 

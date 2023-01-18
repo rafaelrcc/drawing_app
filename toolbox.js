@@ -1,4 +1,4 @@
-function handleDropdown() {
+function handleDropdownShapes() {
 	
 	// get all shape links
 	const shapeLinks = document.querySelectorAll('.dropdown-content a');
@@ -72,6 +72,10 @@ function handleDropdown() {
 		}
 	  });
 	});
+
+
+
+	// add event listener to each pencil  link
 
   }
     

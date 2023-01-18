@@ -1,4 +1,4 @@
-function FreehandTool(){
+function FreehandTool(strokeSlider){
 	//set an icon and a name for the object
 	this.icon = "assets/freehand.jpg";
 	this.name = "freehand";
@@ -11,6 +11,7 @@ function FreehandTool(){
 	var previousMouseY = -1;
 
 	this.draw = function(){
+
 		//if the mouse is pressed
 		if(mouseIsPressed){
 			//check if they previousX and Y are -1. set them to the current
@@ -22,6 +23,7 @@ function FreehandTool(){
 			//if we already have values for previousX and Y we can draw a line from 
 			//there to the current mouse location
 			else{
+				strokeWeight(strokeSlider.value);
 				line(previousMouseX, previousMouseY, mouseX, mouseY);
 				previousMouseX = mouseX;
 				previousMouseY = mouseY;

@@ -44,7 +44,7 @@ html, body {
 .wrapper {
 	display: grid;
 	height: 100%;
-	grid-template-columns: 220px 230px  minmax(500px, 1fr);
+	grid-template-columns: 	 230px  minmax(500px, 1fr);
 	grid-template-rows: 65px minmax(500px, 1fr) 0px;
 	grid-template-areas:
 		"header header header"
