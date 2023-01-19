@@ -1,4 +1,6 @@
 function handleDropdownPencil() {
+
+
 	
     // get all shape links
     const shapeLinks = document.querySelectorAll('.dropdown-pencil a');
@@ -37,32 +39,35 @@ function handleDropdownPencil() {
             
 
             break;
-            case 'lineToTool':
+            case 'craquelTool':
 
-            selectedToolDiv.innerHTML = "<div class='tool-div'> <i class='material-symbols-outlined' id='line'>timeline</i></div>"
+            selectedToolDiv.innerHTML = "<div class='tool-div'> <i class='material-symbols-outlined' id='brush'>brush</i></div>"
             + "<div class='stroke-div'>Stroke: <input class='blue-slider' type='range' id='stroke-width' min='1' max='10' value='5'></div>"
-            + "<div class='stroke-div'>Line Cap: <select id='line-cap'><option value='butt'>Butt</option><option value='round'>Round</option><option value='square'>Square</option></select></div>";
             strokeSlider = document.getElementById("stroke-width");
 
-            LineToTool(strokeSlider);
-
-
-
+            craquelPaint(strokeSlider);
             break;
 
-            case 'triangleTool':
 
-            selectedToolDiv.innerHTML = "<div class='tool-div'> <i class='material-symbols-outlined' id='triangle'>change_history</i></div>"
-            + "<div class='fill-div'>Fill: <input type='checkbox' id='fill-checkbox'></div>"
-            + "<div class='stroke-div'>Stroke: <input class='blue-slider' type='range' id='stroke-width' min='1' max='10' value='5'></div>";
-            fillCheckbox = document.getElementById("fill-checkbox");
+            case 'craquelTool':
+
+            selectedToolDiv.innerHTML = "<div class='tool-div'> <i class='material-symbols-outlined' id='brush'>brush</i></div>"
+            + "<div class='stroke-div'>Stroke: <input class='blue-slider' type='range' id='stroke-width' min='1' max='10' value='5'></div>"
             strokeSlider = document.getElementById("stroke-width");
 
-
-            
-            TriangleTool(fillCheckbox, strokeSlider);
-
+            craquelPaint(strokeSlider);
             break;
+
+            case 'pastelTool':
+
+            selectedToolDiv.innerHTML = "<div class='tool-div'> <i class='material-symbols-outlined' id='brush'>brush</i></div>"
+            + "<div class='stroke-div'>Stroke: <input class='blue-slider' type='range' id='stroke-width' min='1' max='10' value='5'></div>"
+            strokeSlider = document.getElementById("stroke-width");
+
+            pastelTool(strokeSlider);
+            break;
+
+      
 
 
             default:
