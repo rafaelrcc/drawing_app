@@ -4,95 +4,124 @@
     <script src="lib/p5.min.js"></script>
     <script src="lib/p5.dom.js"></script>
 
-    <script src="sketch.js"></script>
-
     <!-- add extra scripts below -->
-    <script src="colourPalette.js"></script>
-    <script src="pastelPaint.js"></script>
-    <script src="craquelPaint.js"></script>
-    <script src="handleDropdownDraw.js"></script>
-    <script src="toolbox.js"></script>
-    <script src="CircleTool.js"></script>
 
-    <script src="TriangleTool.js"></script>
-    <script src="freehandTool.js"></script>
-    <script src="lineToTool.js"></script>
-    <script src="sprayCanTool.js"></script>
-    <script src="mirrorDrawTool.js"></script>
-    <script src="helperFunctions.js"></script>
+    <script src="tools/colourPalette.js"></script>
+    <script src="handlers/gridBuilder.js"></script>
+    <script src="handlers/LayerManager.js"></script>
+    <script src="tools/selectedTool.js"></script>
+    <script src="handlers/Grid.js"></script>
+    <script src="shapes/Point.js"></script>
+    <script src="shapes/CircleTool.js"></script>
+    <script src="paint/pastelPaint.js"></script>
+    <script src="paint/craquelPaint.js"></script>
+    <script src="handlers/handleDropdownDraw.js"></script>
+    <script src="handlers/dropdownShapes.js"></script>
+    <script src="tools/shapeSelector.js"></script>
+    <script src="shapes/TriangleTool.js"></script>
+    <script src="paint/freehandTool.js"></script>
+    <script src="shapes/lineToTool.js"></script>
+    <script src="paint/sprayCanTool.js"></script>
+    <script src="tools/mirrorDrawTool.js"></script>
+    <script src="handlers/helperFunctions.js"></script>
+    <script src="tools/SelectionTool.js"></script>
+    <script src="tools/drawSelection.js"></script>
+    <script src="tools/undoRedo.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+      />
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      />
   </head>
   <body>
-  	<div class="wrapper">
+    <div class="wrapper">
       <div class="box header">
-        <button id="clearButton"><i class="material-symbols-outlined"> clear_all</i></button>
-        <button id="saveImageButton"><i class="material-symbols-outlined">download</i></button>
-        
+        <button id="clearButton">
+          <i class="material-symbols-outlined"> clear_all</i>
+        </button>
+        <button id="saveImageButton">
+          <i class="material-symbols-outlined">download</i>
+        </button>
 
         <!-- create a dropdown menu with circle, rectangle icons from google material  -->
+        <div class="dropdown">
+          <button class="dropbtn">
+            <i class="material-icons"> radio_button_unchecked</i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#" id="circleTool"><i class="material-symbols-outlined"
+                id="circle">radio_button_unchecked</i></a>
+            <!-- <! add another  geometric shapes  -->
+            <a href="#" id="square"><i class="material-symbols-outlined">crop_square</i></a>
+            <a href="#" id="triangleTool"><i class="material-symbols-outlined">
+                change_history</i></a>
+            <a href="#" id="lineToTool"><i class="material-symbols-outlined">
+                maximize</i></a>
+            <a href="#" id="pentagon"><i class="material-symbols-outlined">
+                pentagon</i></a>
+            <a href="#" id="hexagon"><i class="material-symbols-outlined">
+                hexagon</i></a>
+            <a href="#" id="rectangle"><i class="material-symbols-outlined">
+                rectangle</i></a>
+          </div>
+        </div>
 
-      <div class="dropdown">
-        <button class="dropbtn"><i class="material-icons"> radio_button_unchecked</i></button>
-        <div class="dropdown-content">
-          <a href="#" id="circleTool"><i class="material-symbols-outlined" id="circle">radio_button_unchecked</i></a>
-          <!-- <! add another  geometric shapes  -->
-          <a href="#" id="square"><i class="material-symbols-outlined ">crop_square</i></a>
-          <a href="#" id="triangleTool"><i class="material-symbols-outlined"> change_history</i></a>
-          <a href="#" id="lineToTool"><i class="material-symbols-outlined"> maximize</i></a>
-          <a href="#" id="pentagon"><i class="material-symbols-outlined"> pentagon</i></a>
-          <a href="#" id="hexagon"><i class="material-symbols-outlined"> hexagon</i></a>
-          <a href="#" id="rectangle"><i class="material-symbols-outlined"> rectangle</i></a>
-        </div>  
-      </div>
-
-      <div class="dropdown-colors">
+        <div class="dropdown-colors">
           <label id="picklab">
-            <I class="material-icons" id="pick"> <span class="material-symbols-outlined">
-              format_color_fill
-              </span></I>
-            <input type="color" id="colourPicker" value="#000000" open>
+            <i class="material-icons" id="pick">
+              <span class="material-symbols-outlined">
+                format_color_fill
+              </span></i>
+            <input type="color" id="colourPicker" value="#000000" open />
           </label>
+        </div>
+
+        <div class="dropdown-pencil">
+          <button class="dropbtn-pencil">
+            <i class="material-icons"> brush</i>
+          </button>
+          <div class="dropdown-content-pencil">
+            <a href="#" id="pencilTool"><i class="material-symbols-outlined">draw</i></a>
+            <a href="#" id="freehandTool"><i class="material-symbols-outlined">gesture</i></a>
+            <a href="#" id="pastelTool">
+              <img src="pastel.png" alt="craquel paint" />
+            </a>
+            <a href="#" id="craquelTool">
+              <img src="craquel.png" alt="craquel paint" />
+            </a>
+          </div>
+        </div>
+
+        <button class="dropbtn" id="selectButton"><i class="material-symbols-outlined">
+            arrow_selector_tool</i></button>
+
+        <button class="dropbtn" id="undoButton"><i class="material-symbols-outlined">
+          undo</i></button>
+
+        <button class="dropbtn" id="redoButton"><i class="material-symbols-outlined">
+          redo</i></button>
+
+        <div id="selected-tool"></div>
+        <div id="fill-checkbox"></div>
+        <div id="stroke-width"></div>
       </div>
-
-      <div class="dropdown-pencil">
-        <button class="dropbtn-pencil"><i class="material-icons"> brush</i></button>
-        <div class="dropdown-content-pencil">
-          <a href="#" id="pencilTool"><i class="material-symbols-outlined">draw</i></a>
-          <a href="#" id="freehandTool"><i class="material-symbols-outlined">gesture</i></a>
-          <a href="#" id="pastelTool">        
-            <img src="pastel.png" alt="craquel paint">
-          </a>
-          <a href="#" id="craquelTool">
-            <img src="craquel.png" alt="craquel paint">
-          </a>          
-        </div>  
+      <div class="box" id="sidebar">
+        <div id="layer-container">
+          <ul id="layer-list"></ul>
+          <button id="add-layer-btn">Add Layer</button>
+          
+        </div>
       </div>
-
-
-      <!-- <! display the selected tool  -->
-    
-
-      
-
-
-      <button class="dropbtn"> <i class="material-icons"> grid_on</i></button>
-
-
-      <div id="selected-tool"></div>
-      <div id = "fill-checkbox"></div>
-
-
-    </div>
-      <div class="box" id="sidebar"></div>
       <div id="content"></div>
       <div class="box options"></div>
-	</div>
+    </div>
   </body>
+
+  <script src="sketch.js"></script>
 </html>
