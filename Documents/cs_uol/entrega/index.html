@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Link to custom CSS file -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <link rel="stylesheet" href="styles.css">
+        <!-- Link to Font Awesome icon library -->
+        <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            media="screen" title="no title">
+        <!-- Link to Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Oswald"
+            rel="stylesheet">
+        <!-- Set page title -->
+        <title>Mariana & Rafael 2023</title>
+        <!-- Set viewport for mobile devices -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <!-- Site container -->
+        <div class="site-home">
+            <!-- Skip link for screen readers -->
+            <a class="skip-link screen-reader-text" href="#content">Skip to
+                content</a>
+            <!-- Site header -->
+            <header class=header-home>
+                <!-- Navigation bar toggle button -->
+                <div class="resp-nav">
+                    <span>HOME</span>
+                    <i class="fa fa-bars fa-2x" aria-hidden="true" id="toggle"></i><a
+                        href="#"></a>
+                </div>
+                <!-- Navigation bar -->
+                <nav class="navbar" id="navbar">
+                    <ul>
+                        <li><a href="index.html" id="to-inicio">HOME</a></li>
+                        <!-- <li><a href="news.html" id="to-link1">NEWS</a></li> -->
+                        <li><a href="history.html" id="to-link2">MAPA</a></li>
+                        <li><a href="gallery.html" id="to-link3">PRESENTES</a></li>
+                        <!-- <li><a href="report.html" id="to-link5">REPORT</a></li> -->
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- Main content area -->
+            <main class="main-area-home">
+
+                <!-- Introduction Section -->
+
+                <section class="landing-section">
+
+
+                    <div class="landing-content">
+                        <h2>Mariana e Rafael</h2>
+                    </div>
+
+
+                </section>
+
+                <!-- Wedding date section -->
+                <section id="wedding-date">
+                    <div class="wedding-date-content">
+                        <div class="wedding-date-content__item">
+                            <div class="wedding-date-content__item__icon">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            </div>
+                            <div class="wedding-date-content__item__text">
+                                <h3>Local</h3>
+                                <p>Capela Sta Teresinha
+                                    <br>Itajaí</p>
+                            </div>
+                        </div>
+
+                        <div class="wedding-date-content__item">
+                            <div class="wedding-date-content__item__icon">
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="wedding-date-content__item__text">
+                                <h3>Horário</h3>
+                                <p>18h:00 <br>
+                                    Recepção: 17h:30
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="wedding-date-content__item">
+                            <div class="wedding-date-content__item__icon">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                            </div>
+                            <div class="wedding-date-content__item__text">
+                                <h3>Data</h3>
+                                <p>10 de junho <br>
+                                    2023
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Lead section With Carousel -->
+
+                <section class="lead-home" id="content">
+
+
+                    <div class="carousel-wrapper" id="products2">
+                        <ul class="carousel-inner clearfix">
+                            <li class="carousel-item">
+                                <a href="/news.html">
+                                    <div class="image-container">
+                                        <img src="/images/santa.jpg"
+                                            alt="SpaceX's Starship prototype
+                                            preparing for its first test
+                                            flight">
+                                    </div>
+
+                                    <div class="image-description">
+                                        <p>Cerimônia</p>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="carousel-item" tabindex="6">
+
+                                <a href="/news.html">
+                                    <div class="image-container">
+                                        <img src="/images/clube-atiradores.webp"
+                                            alt="Crew Dragon">
+                                    </div>
+
+                                    <div class="image-description">
+                                        <p>Recepção</p>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="carousel-item" tabindex="7">
+                                <a href="/news.html">
+                                    <div class="image-container">
+                                        <img src="/images/hotel.webp"
+                                            alt="Aurora from Space">
+                                    </div>
+                                </a>
+                                <div class="image-description">
+                                    <p>Hotéis</p>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <a href="#" class="carousel-left"></a>
+                        <a href="#" class="carousel-right"></a>
+                    </div>
+                </section>
+
+                <!-- Others News and Highlights Section -->
+                <h1 class="content-home">RSVP</h1>
+                <section class="contact">
+                    <form action="form_handler.php" method="post">
+                        <label for="name">Nome(s):</label>
+                        <input type="text" id="name" name="name" placeholder="Nomes dos convidados" required>
+                
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" name="message" placeholder="Escreva uma mensagem para os noivos"></textarea>
+                        <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+                
+                        <input type="submit" value="Enviar">
+                    </form>
+                </section>
+                
+
+
+            </main>
+        </div>
+        <!-- Load Script -->
+        <script src="scripts/news.js"> </script>
+        <script src="scripts/navbar.js"> </script>
+        <script src="scripts/carousel.js"> </script>
+        <footer class="footer">
+            <aside>Design:
+                Rafael Cenatti e Mariana Duarte </aside>
+        </footer>
+        
+    </body>
+    
+
+</html>

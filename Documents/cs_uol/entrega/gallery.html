@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Link to custom CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to Font Awesome icon library -->
+    <link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      media="screen" title="no title">
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald"
+      rel="stylesheet">
+    <!-- Set page title -->
+    <title>Mariana & Rafael 2023</title>
+    <!-- Set viewport for mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+  </head>
+
+  <body>
+
+    <!-- Site container -->
+    <div class="site-home">
+      <!-- Skip link for screen readers -->
+      <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+      <!-- Site header -->
+      <header class="header-home">
+        <!-- Navigation bar toggle button -->
+        <div class="resp-nav">
+          <span>Menu</span>
+          <i class="fa fa-bars fa-2x" aria-hidden="true" id="toggle"></i>
+          <a href="#"></a>
+        </div>
+        <!-- Navigation bar -->
+        <nav class="navbar" id="navbar">
+          <ul>
+            <li><a href="index.html" id="to-inicio">HOME</a></li>
+            <!-- <li><a href="news.html" id="to-link1">NEWS</a></li> -->
+            <li><a href="history.html" id="to-link2">MAPA</a></li>
+            <li><a href="gallery.html" id="to-link3">PRESENTES</a></li>
+            <!-- <li><a href="report.html" id="to-link5">REPORT</a></li> -->
+          </ul>
+        </nav>
+      </header>
+      <!-- Title of the page -->
+      <div class="title">
+        <h2>Presentes</h2>
+      </div>
+      <!-- Search and Filters -->
+      <div class="search-container" id="content">
+        <!-- Search -->
+        <input type="text" id="myInput" onkeyup="searchGallery()"
+          placeholder="Search...">
+
+
+
+        <!-- Filter by price -->
+
+        <div class="price-filter">
+          <h2>Filtrar por preço</h2>
+          <input type="range" min="0" max="3000" value="3000"
+            class="price-slider" id="priceSlider" oninput="filterByPrice()">
+          <p>Preço máximo: R$ <span id="sliderValue">3000</span></p>
+        </div>
+        
+      </div>
+
+      
+
+      <!-- Gallery -->
+      <section class="container-gallery" id="myGallery">
+        <div class="card">
+          <a href="#" data-toggle="modal" data-target="#imageModal"
+            tabindex="6">
+            <img src="/images/coliseu.jpg" alt="Coliseu, Roma"
+              onclick="openImageModal(this,
+              this.parentElement.querySelector('.card-text'))">
+            <div class="card-text"
+              onclick="openImageModal(this.parentElement.querySelector('img'),
+              this)">
+              <h2>Tour Privado no Coliseu</h2>
+              <p>Presenteie-nos com uma incrível experiência de viagem em Roma
+                explorando o Coliseu com um guia privado.</p>
+              <span class="price-tag">R$ 850,00</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="#" data-toggle="modal" data-target="#imageModal"
+            tabindex="6">
+            <img src="/images/atomium.jpeg" alt="Atomium, Bruxelas"
+              onclick="openImageModal(this,
+              this.parentElement.querySelector('.card-text'))">
+            <div class="card-text"
+              onclick="openImageModal(this.parentElement.querySelector('img'),
+              this)">
+              <h2>Visita ao Atomium, Bruxelas</h2>
+              <p>Um presente inesquecível: explore a arquitetura icônica do
+                Atomium em Bruxelas e desfrute de uma vista panorâmica da
+                cidade.</p>
+              <span class="price-tag">R$ 420,00</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="#" data-toggle="modal" data-target="#imageModal"
+            tabindex="6">
+            <img src="/images/paris_dinner.webp" alt="Torre Eiffel, Paris"
+              onclick="openImageModal(this,
+              this.parentElement.querySelector('.card-text'))">
+            <div class="card-text"
+              onclick="openImageModal(this.parentElement.querySelector('img'),
+              this)">
+              <h2>Jantar na Torre Eiffel, Paris</h2>
+              <p>Ajude-nos a criar memórias inesquecíveis com um jantar
+                romântico na Torre Eiffel em Paris.</p>
+              <span class="price-tag">R$ 1400,00</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="#" data-toggle="modal" data-target="#imageModal"
+            tabindex="6">
+            <img src="/images/rome_museum.webp" alt="Vaticano, Roma"
+              onclick="openImageModal(this,
+              this.parentElement.querySelector('.card-text'))">
+            <div class="card-text"
+              onclick="openImageModal(this.parentElement.querySelector('img'),
+              this)">
+              <h2>Tour pelos Museus do Vaticano, Roma</h2>
+              <p>Ofereça-nos a oportunidade de conhecer a impressionante arte e
+                história dos Museus do Vaticano em Roma.</p>
+              <span class="price-tag">R$ 480,00</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="#" data-toggle="modal" data-target="#imageModal"
+            tabindex="6">
+            <img src="/images/bike_brussels.jpeg" alt="Passeio de bicicleta,
+              Bruxelas" onclick="
+              openImageModal(this,
+              this.parentElement.querySelector('.card-text'))">
+            <div class="card-text"
+              onclick="openImageModal(this.parentElement.querySelector('img'),
+              this)">
+              <h2>Passeio de Bicicleta em Bruxelas</h2>
+              <p>Contribua para uma experiência divertida e ecológica: um
+                passeio de bicicleta pelas charmosas ruas de Bruxelas.</p>
+              <span class="price-tag">R$ 250,00</span>
+            </div>
+          </a>
+
+        </div>
+        <div class="card">
+          <a href="#" data-toggle="modal" data-target="#imageModal"
+            tabindex="6">
+            <img src="/images/sena.webp" alt="Cruzeiro no Rio Sena,
+              Paris" onclick="openImageModal(this,
+              this.parentElement.querySelector('.card-text'))">
+            <div class="card-text"
+              onclick="openImageModal(this.parentElement.querySelector('img'),
+              this)">
+              <h2>Cruzeiro no Rio Sena, Paris</h2>
+              <p>Ofereça-nos uma experiência mágica em Paris com um cruzeiro
+                noturno pelo Rio Sena, apreciando a cidade das luzes.</p>
+              <span class="price-tag">R$ 450,00</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="#" data-toggle="modal" data-target="#imageModal"
+            tabindex="6">
+            <img src="/images/rome_dinner.webp" alt="Passeio gastronômico, Roma"
+              onclick="openImageModal(this,
+              this.parentElement.querySelector('.card-text'))">
+            <div class="card-text"
+              onclick="openImageModal(this.parentElement.querySelector('img'),
+              this)">
+              <h2>Passeio Gastronômico em Roma</h2>
+              <p>Ajude-nos a descobrir os sabores autênticos da Itália em um
+                delicioso passeio gastronômico por Roma.</p>
+              <span class="price-tag">R$ 600,00</span>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="#" data-toggle="modal" data-target="#imageModal"
+            tabindex="6">
+            <img src="/images/beer.webp" alt="Tour cervejeiro,
+              Bruxelas" onclick="openImageModal(this,
+              this.parentElement.querySelector('.card-text'))">
+            <div class="card-text"
+              onclick="openImageModal(this.parentElement.querySelector('img'),
+              this)">
+              <h2>Tour Cervejeiro em Bruxelas</h2>
+              <p>Presenteie-nos com uma aventura saborosa pelos melhores bares e
+                cervejarias de Bruxelas, degustando cervejas artesanais belgas.</p>
+              <span class="price-tag">R$ 400,00</span>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="#" data-toggle="modal" data-target="#imageModal"
+            tabindex="6">
+            <img src="/images/louvre.jpg" alt="Museu do Louvre, Paris"
+              onclick="openImageModal(this,
+              this.parentElement.querySelector('.card-text'))">
+            <div class="card-text"
+              onclick="openImageModal(this.parentElement.querySelector('img'),
+              this)">
+              <h2>Visita ao Museu do Louvre, Paris</h2>
+              <p>Colabore para uma experiência cultural única: uma visitaao
+                icônico Museu do Louvre em Paris, lar da Mona Lisa e de inúmeras
+                outras obras-primas.</p>
+              <span class="price-tag">R$ 380,00</span>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="card">
+          <a href="#" data-toggle="modal" data-target="#imageModal"
+            tabindex="6">
+            <img src="/images/cooking_rome.jpg" alt="Aula de culinária italiana,
+              Roma" onclick="openImageModal(this,
+              this.parentElement.querySelector('.card-text'))">
+            <div class="card-text"
+              onclick="openImageModal(this.parentElement.querySelector('img'),
+              this)">
+              <h2>Aula de Culinária Italiana, Roma</h2>
+              <p>Presenteie-nos com uma autêntica aula de culinária italiana em
+                Roma para aprendermos a preparar deliciosos pratos tradicionais.</p>
+              <span class="price-tag">R$ 500,00</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="#" data-toggle="modal" data-target="#imageModal"
+            tabindex="6">
+            <img src="/images/balloon.jpg" alt="Passeio de balão, Paris"
+              onclick="openImageModal(this,
+              this.parentElement.querySelector('.card-text'))">
+            <div class="card-text"
+              onclick="openImageModal(this.parentElement.querySelector('img'),
+              this)">
+              <h2>Passeio de Balão em Paris</h2>
+              <p>Ajude-nos a tornar nossa lua de mel inesquecível com um
+                emocionante passeio de balão sobre a bela paisagem parisiense.</p>
+              <span class="price-tag">R$ 1500,00</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Modals-->
+
+      <div id="videoModal" class="modal">
+        <!-- Close button -->
+        <a href="#" class="close">&times;</a>
+        <!-- Video player -->
+        <video controls id="myVideo">
+        </video>
+      </div>
+
+      <div id="imageModal" class="modal" onclick="closeModal(event)">
+        <!-- Close button -->
+        <button class="close-btn" onclick="closeModal(event)">&times;</button>
+        <div class="modal-info">
+          <!-- Image -->
+          <img src="/images/nasa-moon-step.jpg" class="modal-content" id="img01" alt="gallery image modal">
+          <!-- Information text -->
+          <p>Para nos presentear com esta experiência, por favor, realize uma transferência via PIX para o seguinte número: (insira o número PIX aqui).</p>
+          <p>Após a transferência, envie um e-mail para (insira o e-mail aqui) com o comprovante e o nome dos convidados que escolheram o presente. Agradecemos a sua generosidade!</p>
+        </div>
+      </div>
+      
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <aside>Design:
+          Rafael Cenatti e Mariana Duarte </aside>
+  </footer>
+    <!-- Scripts -->
+    <script src="/scripts/gallery.js"> </script>
+    <script src="/scripts/navbar.js"> </script>
+  </body>
+
+</html>
